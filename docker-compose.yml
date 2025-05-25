@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: codiseumdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: codiseumpass
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./codiseum-backend
+      dockerfile: Dockerfile
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/codiseumdb
+      DB_USER: postgres
+      DB_PASS: codiseumpass
+      FRONTEND_URL: http://localhost:5173
+      JWT_SECRET: hoVcz8/Ths8xuDyLQR+3REVdV5EFjOByguSiuPHD833MRFnSa57j7s0Rnw/KAOepaJBiHEa2Gums5FLJl+PaLA==
+      JWT_EXPIRATION: 86400000
+      GOOGLE_CLIENT_ID: 1037642793154-qe4gpe5ebioqm01mep9ulq99fs87ms50.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: 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
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./codiseum-backend/uploads:/app/uploads
+
+  frontend:
+    build:
+      context: ./codiseum-frontend
+      dockerfile: Dockerfile
+    environment:
+      VITE_BACKEND_URL: http://localhost:8080
+      VITE_WS_URL: ws://localhost:8080/ws
+    ports:
+      - "5173:80"  
+    depends_on:
+      - backend
+
+volumes:
+  pgdata: 
