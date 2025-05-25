@@ -1,0 +1,162 @@
+.username-element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-left: 11px;
+
+    .username-display {
+        display: inline-flex;
+        align-items: center;
+        user-select: text;
+
+        height: 60px;
+
+        .username {
+            font-size: 32px;
+            cursor: url('./copy_scaled.png') 0 -20, pointer;
+        }
+
+        .copied {
+            animation: textCopied 0.3s steps(1);
+        }
+
+        .measurer {
+            position: absolute;
+            visibility: hidden;
+            height: 0;
+            overflow: hidden;
+            white-space: pre;
+            font-size: 32px;
+        }
+
+        .username-container {
+
+            position: relative;
+            display: flex;
+            height: 34px;
+
+            .username-input {
+                font-size: 32px;
+                outline: none;
+                border: none;
+                background-color: rgba($color: #000000, $alpha: 0.0);
+                line-height: 34px;
+            }
+
+            .cursor {
+                position: absolute;
+                top: -2px;
+                left: 96px;
+                display: none;
+                font-size: 32px;
+                animation: alternateOpacity 1s steps(1) infinite;
+                transition: 0.5s;
+            }
+
+            .cursor.active {
+                display: block;
+                transition: 0.5s;
+            }
+
+        }
+
+        .prefix {
+            font-size: 16px;
+            color: gray;
+            cursor: url('./copy_scaled.png') 0 -20, pointer;
+        }
+    }
+
+    .button {
+        width: 49px;
+        height: 49px;
+        image-rendering: pixelated;
+    }
+
+    .edit {
+        margin: 16px;
+
+        width: 49px;
+        height: 49px;
+        image-rendering: pixelated;
+        background-image: url('/icons/icons_spritesheet.png');
+        background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+        background-position: -147px 0;
+        background-repeat: no-repeat;
+    }
+
+    .save {
+        margin-left: 16px;
+        width: 49px;
+        height: 49px;
+        image-rendering: pixelated;
+        background-image: url('/icons/icons_spritesheet.png');
+        background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+        background-position: -245px 0;
+        background-repeat: no-repeat;
+    }
+
+    .cancel {
+        margin: 16px;
+
+        width: 49px;
+        height: 49px;
+        image-rendering: pixelated;
+        background-image: url('/icons/icons_spritesheet.png');
+        background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+        background-position: -98px 0;
+        background-repeat: no-repeat;
+    }
+
+}
+
+.username-element.active {
+    border: 7px solid #2e1200;
+    margin-top: -7px;
+    margin-bottom: -7px;
+}
+
+@keyframes alternateOpacity {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textCopied {
+
+    0% {
+        color: white;
+        background-color: black;
+    }
+
+    25% {
+        color: black;
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    50% {
+        color: white;
+        background-color: black;
+    }
+
+    75% {
+        color: black;
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    100% {
+        color: white;
+        background-color: black;
+    }
+
+}

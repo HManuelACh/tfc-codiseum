@@ -1,0 +1,19 @@
+.player-container {
+
+    width: 91px;
+    height: 161px;
+
+    .player {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &.customize:hover {
+            cursor: url('/customize_scaled.png') 55 -20, pointer;
+        }
+
+    }
+
+}

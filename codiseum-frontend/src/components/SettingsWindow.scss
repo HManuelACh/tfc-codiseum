@@ -1,0 +1,104 @@
+.settings-window {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 7px solid #2e1200;
+    background-color: white;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    width: 40%;
+    height: 60%;
+
+    padding: 0px 32px 0px 32px;
+
+    z-index: 1;
+
+    * {
+        user-select: none;
+    }
+
+    .title {
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    .section {
+        margin-top: 32px;
+
+        .title {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+        .button-row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .action-button {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #eeeeee;
+            color: #333;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #dddddd;
+            }
+
+            &.delete {
+                background-color: #f44336;
+                color: white;
+
+                &:hover {
+                    background-color: #d32f2f;
+                }
+            }
+        }
+
+        .delete-confirmation {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .delete-account-confirm {
+                color: #f44336;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .action-button.delete {
+                background-color: #f44336;
+                color: white;
+
+                &:hover {
+                    background-color: #d32f2f;
+                }
+            }
+        }
+
+    }
+
+    .cancel {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin: 16px;
+    }
+}

@@ -1,0 +1,142 @@
+.battle-requests-panel {
+
+    font-size: 1.5rem;
+
+    border-left: 7px solid #2e1200;
+
+    position: relative;
+
+    .requests-title-container {
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .requests-title {
+            width: 259px;
+            height: 63px;
+
+            margin: 28px;
+        }
+
+    }
+
+    .list {
+
+        .search-container {
+
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+
+            input {
+                font-size: 24px;
+                width: 86.5%;
+                height: 81px;
+                outline: none;
+                border: none;
+                padding: 18px;
+                line-height: 81px;
+            }
+
+            input[type="search"]::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            .send {
+                position: absolute;
+                right: 8px;
+                margin: 16px 8px 8px 8px;
+
+                width: 49px;
+                height: 49px;
+                image-rendering: pixelated;
+                background-image: url('/icons/icons_spritesheet.png');
+                background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+                background-position: -245px 0;
+                background-repeat: no-repeat;
+            }
+
+        }
+
+        .battle-request {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 7px solid #2e1200;
+
+            height: 88px;
+
+            padding: 8px 8px 8px 18px;
+
+            font-size: 24px;
+
+            .opponent,
+            .sender {
+                width: 100%;
+                margin-right: 16px;
+                height: 42px;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .button-container {
+
+                display: flex;
+                flex-direction: row;
+
+                .button {
+                    width: fit-content;
+                    height: 100%;
+                }
+
+                .accept {
+                    margin-right: 8px;
+
+                    width: 49px;
+                    height: 49px;
+                    image-rendering: pixelated;
+                    background-image: url('/icons/icons_spritesheet.png');
+                    background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+                    background-position: -0px 0;
+                    background-repeat: no-repeat;
+                }
+
+                .reject {
+                    width: 49px;
+                    height: 49px;
+                    image-rendering: pixelated;
+                    background-image: url('/icons/icons_spritesheet.png');
+                    background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+                    background-position: -98px 0;
+                    background-repeat: no-repeat;
+                }
+            }
+
+        }
+
+    }
+
+    &.battle-mode {
+        animation: disappearRight forwards 0.5s;
+    }
+
+}
+
+@keyframes disappearRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(800px);
+    }
+}

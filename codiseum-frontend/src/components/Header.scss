@@ -1,0 +1,82 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: #74512D;
+
+    height: 10%;
+
+    transition: background-color 1s;
+
+    .content {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+
+        .more {
+            width: 49px;
+            height: 49px;
+            image-rendering: pixelated;
+            background-image: url('/icons/icons_spritesheet.png');
+            background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+            background-repeat: no-repeat;
+        }
+
+        .more.play {
+            background-position: -441px 0;
+        }
+
+        .more.default {
+            background-position: -196px 0;
+        }
+
+        .utils-container {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 28px;
+
+            .admin {
+                width: 49px;
+                height: 49px;
+                image-rendering: pixelated;
+                background-image: url('/icons/icons_spritesheet.png');
+                background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+                background-position: -49px 0;
+                background-repeat: no-repeat;
+            }
+
+            .settings {
+                width: 49px;
+                height: 49px;
+                image-rendering: pixelated;
+                background-image: url('/icons/icons_spritesheet.png');
+                background-size: var(--icons-spritesheet-width) var(--icons-spritesheet-height);
+                background-position: -294px 0;
+                background-repeat: no-repeat;
+            }
+
+        }
+
+    }
+
+    &.dissapear {
+        animation: disappearTop forwards 0.5s;
+    }
+
+}
+
+@keyframes disappearTop {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-90px);
+    }
+}

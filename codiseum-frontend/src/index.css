@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Dogica';
+  src: url('/fonts/dogica/TTF/dogica.ttf?v=2') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Dogica', monospace;
+  cursor: url('/cursor_scaled.png'), auto;
+}
+
+:root {
+  --icons-spritesheet-width: 490px;
+  --icons-spritesheet-height: 49px;
+
+  --icons-spritesheet2-width: 980px;
+  --icons-spritesheet2-height: 112px;
+}
+
+::selection {
+  background: #feba17;
+  color: #000;
+}
+
+.button:hover, .pointer {
+  cursor: url('/pointer_scaled.png') 20 -20, pointer;
+}
+
+.scale {
+  transition: transform 0.25s;
+}
+
+.scale:hover {
+  transform: scale(1.1);
+  transform-origin: center center;
+  transition: transform 0.3s;
+  will-change: transform;
+}

@@ -1,0 +1,71 @@
+.battle-panel {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .mode-logo {
+        margin: 28px;
+    }
+
+    .player-wrapper {
+        margin: 28px;
+    }
+
+    .battle-button-container {
+
+        display: flex;
+        flex-direction: row;
+
+        margin-top: 28px;
+
+        .previous {
+
+            width: 112px;
+            height: 112px;
+            image-rendering: pixelated;
+            user-select: none;
+
+            margin-right: 28px;
+
+            background-image: url('/icons/icons_spritesheet2.png');
+            background-size: var(--icons-spritesheet2-width) var(--icons-spritesheet2-height);
+            background-position: -112px 0;
+            background-repeat: no-repeat;
+        }
+
+        .battle {
+            width: 252px;
+            height: 112px;
+            image-rendering: pixelated;
+            user-select: none;
+
+            background-image: url('/icons/icons_spritesheet2.png');
+            background-size: var(--icons-spritesheet2-width) var(--icons-spritesheet2-height);
+            background-position: -224px 0;
+            background-repeat: no-repeat;
+        }
+
+        .next {
+            width: 112px;
+            height: 112px;
+            image-rendering: pixelated;
+            user-select: none;
+
+            margin-left: 28px;
+
+            background-image: url('/icons/icons_spritesheet2.png');
+            background-size: var(--icons-spritesheet2-width) var(--icons-spritesheet2-height);
+            background-position: -0px 0;
+            background-repeat: no-repeat;
+        }
+
+    }
+
+    .grayscale {
+        filter: grayscale(100%);
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+}

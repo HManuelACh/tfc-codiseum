@@ -1,0 +1,147 @@
+.classification-panel {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    height: 100%;
+
+    .title-container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .league-title {
+            width: 259px;
+            height: 63px;
+
+            margin: 28px;
+        }
+
+    }
+
+    .league-content {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        .current-league,
+        .top-players {
+            height: 100%;
+        }
+
+        .current-league {
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 100%;
+
+            .league-name {
+                margin: 32px;
+            }
+
+            .league-points {}
+        }
+
+        .top-players {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            .title {
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 3rem;
+            }
+
+            .top-player-list {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.25rem;
+            }
+
+            .top-player-entry {
+                font-size: 18px;
+                line-height: 1.4;
+                padding: 8px 16px;
+                border-radius: 8px;
+                background-color: rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                user-select: none;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .scroll-container {
+                max-width: 200px;
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+            }
+
+            .scroll-text {
+                display: inline-block;
+                white-space: nowrap;
+                transition: transform 0.3s ease;
+            }
+
+            .top-player-entry:hover .scroll-text {
+                animation: scroll-left 5s linear infinite;
+            }
+
+            .player-points {
+                flex-shrink: 0;
+                margin-left: 4px;
+            }
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+    }
+
+    &.battle-mode {
+        animation: disappearLeft forwards 0.5s;
+    }
+
+}
+
+@keyframes disappearLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-480px);
+    }
+}
